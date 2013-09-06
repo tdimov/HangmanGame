@@ -1,0 +1,89 @@
+﻿<Page x:Class="HangmanGame.Hangman_UI_Controls.KindGameUI"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" WindowHeight="460" WindowWidth="620" 
+      d:DesignHeight="460" d:DesignWidth="620" WindowTitle="Choose Your Game"
+	Title="KindGamePage">
+
+    <Page.Resources>
+
+        <!-- Styles For Buttons -->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Rectangle Width="200" Height="30" RadiusX="15" RadiusY="15" Cursor="Hand">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.5, 0" StartPoint="0.5, 1">
+                                        <GradientStop Color="#fd9a0f" Offset="0"/>
+                                        <GradientStop Color="#fa2" Offset="0.5"/>
+                                        <GradientStop Color="#fee94f" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Tekton Pro Ext" />
+            <Setter Property="Margin" Value="15" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+        <!-- Styles For TextBlock-->
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5, 0" StartPoint="0.5, 1">
+                        <GradientStop Color="#fd9a0f" Offset="0"/>
+                        <GradientStop Color="#fa2" Offset="0.5"/>
+                        <GradientStop Color="#fee94f" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="Tekton Pro Ext"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Padding" Value="2, 3" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="380"/>
+            <Setter Property="Text" Value="Choose What Kind Of Game You Want" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+
+        <!-- StartUp Panel Style-->
+        <Style TargetType="{x:Type StackPanel}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5, 0" StartPoint="0.5, 1">
+                        <GradientStop Color="#69A219" Offset="0"/>
+                        <GradientStop Color="#693" Offset="0.5"/>
+                        <GradientStop Color="#8bc03f" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <StackPanel>
+
+        <!-- Game Logo -->
+        <Image Source="..\Images\HangmanHeaderImage.png" Width="380" Margin="15"/>
+
+        <!-- Page Information Header -->
+        <TextBlock/>
+
+        <!-- Navigation Buttons -->
+        <Button Content="Play Alone" Click="PlayAloneButtonClick" />
+        <Button Content="Play With Friend" Click="PlayWithFriendButtonClick" />
+        <Button Content="Back" Click="BackButtonClick" />
+    </StackPanel>
+</Page>
